@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+// src/App.js
+
+import React, { useState } from 'react';
+import FileUpload from './components/FileUpload';
+import ImageDisplay from './components/ImageDisplay';
+import ResolutionAdjuster from './components/ResolutionAdjuster';
+import WelcomeScreen from './components/WelcomeScreen';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [image, setImage] = useState(null);
+  const [resolution, setResolution] = useState(256);
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  const handleStart = () => {
+    setShowWelcome(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {showWelcome ? (
+        <WelcomeScreen onStart={handleStart} />
+      ) : (
+        <>
+          <h1>Image Adjustor</h1>
+          <FileUpload onImageUpload={setImage} />
+          <ResolutionAdjuster resolution={resolution} onResolutionChange={setResolution} />
+          <ImageDisplay image={image} resolution={resolution} />
+        </>
+      )}
     </div>
   );
-}
+};
 
 export default App;
