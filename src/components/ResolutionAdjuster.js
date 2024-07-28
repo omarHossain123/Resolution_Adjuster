@@ -18,7 +18,6 @@ const ResolutionAdjuster = ({ resolution, onResolutionChange }) => {
         value={resolution}
         onChange={handleResolutionChange}
       />
-      <span>{resolution}px</span>
     </div>
   );
 };

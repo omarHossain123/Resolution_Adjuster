@@ -4,6 +4,7 @@ import ImageDisplay from './components/ImageDisplay';
 import ResolutionAdjuster from './components/ResolutionAdjuster';
 import WelcomeScreen from './components/WelcomeScreen';
 import './App.css';
+import './index.css';
 
 const App = () => {
   // State to store the uploaded image data
