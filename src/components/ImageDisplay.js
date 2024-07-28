@@ -36,6 +36,7 @@ const ImageDisplay = ({ image, resolution }) => {
           canvas.height
         );
       };
+      // Set the image source to the data URL
       img.src = image;
     }
   }, [image, resolution]);
@@ -44,6 +45,7 @@ const ImageDisplay = ({ image, resolution }) => {
 
   return (
     <div>
+      {/* Canvas to display the image */}
       <canvas ref={canvasRef} width={512} height={512} style={{ maxWidth: '100%' }} />
     </div>
   );

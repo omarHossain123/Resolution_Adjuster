@@ -1,5 +1,4 @@
-/* src/App.css */
-
+/* Global styles for the body */
 body {
   margin: 0;
   padding: 0;
@@ -13,6 +12,7 @@ body {
   overflow: hidden;
 }
 
+/* Styles for the main app container */
 .App {
   text-align: center;
   padding: 20px;
@@ -30,6 +30,7 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Styles for the welcome screen */
 .welcome-screen {
   display: flex;
   flex-direction: column;
@@ -38,6 +39,7 @@ h1 {
   height: 100vh;
 }
 
+/* Styles for the start button */
 .start-button {
   padding: 15px 30px;
   font-size: 1.2em;
@@ -55,6 +57,7 @@ h1 {
   transform: scale(1.05);
 }
 
+/* Styles for the resolution adjuster */
 .resolution-adjuster {
   margin: 20px 0;
 }
