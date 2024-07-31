@@ -13,7 +13,7 @@ const ResolutionAdjuster = ({ resolution, onResolutionChange }) => {
       <input
         type="range"
         min="32"
-        max="512"
+        max="3840"
         step="1"
         value={resolution}
         onChange={handleResolutionChange}
@@ -23,3 +23,4 @@ const ResolutionAdjuster = ({ resolution, onResolutionChange }) => {
 };
 
 export default ResolutionAdjuster;
+

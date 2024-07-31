@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Image Adjustor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Image Adjustor! This is a React application that allows users to upload an image, adjust its resolution, and display the adjusted image on a canvas.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Upload an image file.
+- Adjust the image resolution using a slider.
+- Display the adjusted image on a canvas.
 
-### `npm start`
+## Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### FileUpload
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The `FileUpload` component handles the image file upload. It reads the image file and converts it to a data URL, which is then passed to the parent component via a callback.
 
-### `npm test`
+### ImageDisplay
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The `ImageDisplay` component displays the uploaded image on a canvas. It uses an off-screen canvas to draw the image at a lower resolution and then stretches the lower resolution image to fit the main canvas.
 
-### `npm run build`
+### ResolutionAdjuster
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The `ResolutionAdjuster` component provides a slider to adjust the resolution of the displayed image. It calls a callback function with the new resolution value whenever the slider is adjusted.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### WelcomeScreen
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The `WelcomeScreen` component displays a welcome message and a button to start the image adjustment process.
 
-### `npm run eject`
+### App
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The `App` component is the main application component that manages the state for the uploaded image, resolution, and whether to show the welcome screen. It renders the appropriate components based on the state.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How It Works
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. The user uploads an image using the `FileUpload` component.
+2. The image data is passed to the `ImageDisplay` component, which displays the image on a canvas.
+3. The `ResolutionAdjuster` component provides a slider for the user to adjust the resolution.
+4. When the resolution is adjusted, the `ImageDisplay` component:
+   - Creates an off-screen canvas to draw the image at the lower resolution.
+   - Draws the image on the off-screen canvas.
+   - Stretches the lower resolution image to fit the main canvas.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

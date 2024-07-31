@@ -11,3 +11,4 @@ const WelcomeScreen = ({ onStart }) => {
 };
 
 export default WelcomeScreen;
+

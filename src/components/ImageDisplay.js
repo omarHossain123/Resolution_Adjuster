@@ -10,15 +10,15 @@ const ImageDisplay = ({ image, resolution }) => {
       const img = new Image();
       img.onload = () => {
         // Calculate the dimensions for the lower resolution
-        const lowerResolutionWidth = Math.floor(img.width * (resolution / 512));
-        const lowerResolutionHeight = Math.floor(img.height * (resolution / 512));
-
+        const lowerResolutionWidth = Math.floor(img.width * (resolution / 3840));
+        const lowerResolutionHeight = Math.floor(img.height * (resolution / 3840));
+        
         // Create an off-screen canvas to draw the image at lower resolution
         const offScreenCanvas = document.createElement('canvas');
         offScreenCanvas.width = lowerResolutionWidth;
         offScreenCanvas.height = lowerResolutionHeight;
         const offScreenContext = offScreenCanvas.getContext('2d');
-
+        
         // Draw the image at lower resolution on the off-screen canvas
         offScreenContext.drawImage(img, 0, 0, lowerResolutionWidth, lowerResolutionHeight);
 
@@ -46,7 +46,7 @@ const ImageDisplay = ({ image, resolution }) => {
   return (
     <div>
       {/* Canvas to display the image */}
-      <canvas ref={canvasRef} width={512} height={512} style={{ maxWidth: '100%' }} />
+      <canvas ref={canvasRef} width={3840} height={2160} style={{ maxWidth: '100%' }} />
     </div>
   );
 };
