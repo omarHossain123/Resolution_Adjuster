@@ -16,7 +16,7 @@ The `FileUpload` component handles the image file upload. It reads the image fil
 
 ### ImageDisplay
 
-The `ImageDisplay` component displays the uploaded image on a canvas. It uses an off-screen canvas to draw the image at a lower resolution and then stretches the lower resolution image to fit the main canvas.
+The `ImageDisplay` component displays the uploaded image on a canvas. It uses an off-screen canvas to draw the image at a lower resolution and then stretches the lower-resolution image to fit the main canvas.
 
 ### ResolutionAdjuster
 
@@ -40,4 +40,4 @@ The `App` component is the main application component that manages the state for
    - Draws the image on the off-screen canvas.
    - Stretches the lower resolution image to fit the main canvas.
 
-
+Can be found here: https://resolution-adjuster.vercel.app/
